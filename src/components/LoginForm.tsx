@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import "../styles/LoginForm.css"
 import { useNavigate } from 'react-router-dom'
+import "../styles/LoginForm.css"
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -20,25 +21,30 @@ const LoginForm = () => {
 
 
   return (
-    <form onSubmit={formik.handleSubmit} className="login-form">
-      <input
-        id='email'
-        name='email'
-        type="email"
-        placeholder='EMAIL'
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <input
-        id='password'
-        name='password'
-        type="password"
-        placeholder='PASSWORD'
-        onChange={formik.handleChange}
-        value={formik.values.password}
-      />
-      <button type='submit'>Submit</button>
-    </form>
+    <section className="login-form">
+      <div className='login-header'>Login</div>
+      <form onSubmit={formik.handleSubmit} >
+        <input
+          id='email'
+          name='email'
+          type="email"
+          placeholder='EMAIL'
+          required
+          onChange={formik.handleChange}
+          value={formik.values.email}
+        />
+        <input
+          id='password'
+          name='password'
+          type="password"
+          placeholder='PASSWORD'
+          required
+          onChange={formik.handleChange}
+          value={formik.values.password}
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    </section>
   )
 }
 

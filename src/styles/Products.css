@@ -1,11 +1,31 @@
 .product-view {
     border: 1px solid lightslategrey;
+    background-color: #FAFAFA;
     cursor: pointer;
-    max-width: 300px;
+    max-width: 200px;
     margin: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 1px;
 }
 .product-view > img {
     width: 100%;
     max-width: 200px;
     max-height: 200px;
+}
+
+.product-view > *{
+    margin-bottom: 5px;
+}
+
+.product-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.product-category {
+    text-transform: capitalize;
+}
+
+.product-price {
+    color:#058ED9;
 }

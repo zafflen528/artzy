@@ -14,10 +14,7 @@ const Login = () => {
     return isLoading ? (
         <SplashScreen />
     ) : (
-        <>
-            <div>Login</div>
-            <LoginForm />
-        </>
+          <LoginForm />
     );
 };
 

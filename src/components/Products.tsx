@@ -8,15 +8,14 @@ const Products = (props:ProductType) => {
 
 	/* go to product detail page */
 	const handleProductClick = () => {
-		// alert(`You clicked the product of id ${props.id}`)
 		navigate(`/product/${props.id}`)
 	}
   return (
     <div className='product-view' onClick={handleProductClick}>
         <img src={props.image}/>
-        <p>{props.title}</p>
-        <p>{props.category}</p>
-        <p>${props.price}</p>
+        <div className='product-title'>{props.title}</div>
+        <div className='product-category'>{props.category}</div>
+        <div className='product-price'>${props.price}</div>
     </div>
   )
 }

@@ -33,8 +33,8 @@ const ProductDetail = () => {
     return (
         <>
 					<header className="product-header">
-						<h1 onClick={goBack} className="back-button">&#60;</h1>
-						<h1>Product</h1>
+						<div onClick={goBack} className="back-button">&#60;</div>
+						<div>Product</div>
 					</header>
             {loading ? (
                 <>Getting product info...</>

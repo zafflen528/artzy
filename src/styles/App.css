@@ -3,6 +3,11 @@
     padding: 0;
     font-family: sans-serif;
 }
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+}
 
 .mobile-container {
     display: flex;
@@ -11,9 +16,10 @@
 }
 
 .mobile-view {
-    border: 3px solid grey;
+    border: 1px solid grey;
     border-radius: 8px;
     height: 100vh;
     min-width: 80vw;
+    background-color: #F2E9DC;
 }
 
