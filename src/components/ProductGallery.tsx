@@ -10,7 +10,7 @@ const ProductGallery = () => {
     const [products, setProducts] = useState<Array<ProductType>>([]);
 
     const getProducts = async () => {
-        Api.get("https://fakestoreapi.com/products?limit=5")
+        Api.get("https://fakestoreapi.com/products?limit=6")
             .then((res) => res.data)
             .then((res) => {
                 console.log(res);

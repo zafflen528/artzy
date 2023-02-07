@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./styles/App.css";
 import Login from "./Login";
 import Store from "./Store";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Login />}/>
                             <Route path="/store" element={<Store />} />
+                            <Route path="/product/:id" element={<ProductDetail />} />
                         </Routes>
                     </section>
                 </div>

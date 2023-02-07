@@ -1,0 +1,10 @@
+.product-header {
+    display: flex;
+    justify-content: space-between;
+}
+.product-detail > img{
+    max-width: 400px;
+}
+.back-button {
+    cursor: pointer;
+}

@@ -1,9 +1,55 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Api from "../conf/Api";
+import ProductType from "../types/ProductType";
+import "../styles/ProductDetail.css";
 
 const ProductDetail = () => {
-  return (
-    <div>ProductDetail</div>
-  )
-}
+    const [loading, setLoading] = useState(true);
+    const [productData, setProductData] = useState<ProductType>();
+    const navigate = useNavigate();
 
-export default ProductDetail
+    const { id } = useParams();
+
+		const goBack = () => {
+			navigate(-1)
+		}
+
+    const getProductByID = async () => {
+        Api.get(`https://fakestoreapi.com/products/${id}`)
+            .then((res) => res.data)
+            .then((res) => {
+                setProductData(res);
+                setLoading(false);
+                console.log(productData);
+            })
+            .catch((e) => alert(e));
+    };
+
+    useEffect(() => {
+        getProductByID();
+    }, []);
+
+    return (
+        <>
+					<header className="product-header">
+						<h1 onClick={goBack} className="back-button">&#60;</h1>
+						<h1>Product</h1>
+					</header>
+            {loading ? (
+                <>Getting product info...</>
+            ) : (
+                <div className="product-detail">
+                    <h1>{productData?.title}</h1>
+                    <img src={productData?.image} />
+                    <h2> {productData?.category} </h2>
+                    <h2> ${productData?.price} </h2>
+                    <p> {productData?.description} </p>
+                    <button>Add to Cart</button>
+                </div>
+            )}
+        </>
+    );
+};
+
+export default ProductDetail;
