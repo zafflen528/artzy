@@ -38,6 +38,7 @@ const ProductGallery = () => {
                         image={product.image}
                         price={product.price}
                         category={product.category}
+                        key={product.id}
                     />
                 ))
             )}

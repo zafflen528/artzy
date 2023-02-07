@@ -11,9 +11,9 @@ const ProductDetail = () => {
 
     const { id } = useParams();
 
-		const goBack = () => {
-			navigate(-1)
-		}
+    const goBack = () => {
+        navigate(-1);
+    };
 
     const getProductByID = async () => {
         Api.get(`https://fakestoreapi.com/products/${id}`)
@@ -32,10 +32,13 @@ const ProductDetail = () => {
 
     return (
         <>
-					<header className="product-header">
-						<div onClick={goBack} className="back-button">&#60;</div>
-						<div>Product</div>
-					</header>
+            <header className="product-header">
+                <div onClick={goBack} className="back-button">
+                    &#60;
+                </div>
+                <div className="product-header-title">Product</div>
+                <div></div>
+            </header>
             {loading ? (
                 <>Getting product info...</>
             ) : (
@@ -43,7 +46,7 @@ const ProductDetail = () => {
                     <h1>{productData?.title}</h1>
                     <img src={productData?.image} />
                     <h2> {productData?.category} </h2>
-                    <h2> ${productData?.price} </h2>
+                    <h2 className="product-price"> ${productData?.price} </h2>
                     <p> {productData?.description} </p>
                     <button>Add to Cart</button>
                 </div>
