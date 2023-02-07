@@ -1,8 +1,10 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import "../styles/LoginForm.css"
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -12,9 +14,11 @@ const LoginForm = () => {
       let userToken = values.email.concat(values.password)
       localStorage.setItem("token", userToken);
       console.log(localStorage.getItem("token"));
-      // go to store page
+      navigate("/store")
     }
   })
+
+
   return (
     <form onSubmit={formik.handleSubmit} className="login-form">
       <input

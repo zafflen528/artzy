@@ -4,6 +4,7 @@ import SplashScreen from "./components/SplashScreen";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./styles/App.css";
 import Login from "./Login";
+import Store from "./Store";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <section className="mobile-view">
                         <Routes>
                             <Route path="/" element={<Login />}/>
+                            <Route path="/store" element={<Store />} />
                         </Routes>
                     </section>
                 </div>

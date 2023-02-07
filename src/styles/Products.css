@@ -1,0 +1,9 @@
+.product-view {
+    border: 1px solid lightslategrey;
+    cursor: pointer;
+    max-width: 300px;
+}
+.product-view > img {
+    width: 100%;
+    max-width: 200px;
+}
