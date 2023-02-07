@@ -1,0 +1,15 @@
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.splash-logo {
+    border: 2px solid black;
+    background-color: lightgray;
+    padding:50px;
+    border-radius: 50%;
+    width: fit-content;
+    letter-spacing: 2px;
+}

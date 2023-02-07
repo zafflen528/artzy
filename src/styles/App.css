@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.mobile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-view {
+    border: 3px solid grey;
+    border-radius: 8px;
+    height: 100vh;
+    min-width: 80vw;
+}
+
